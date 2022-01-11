@@ -223,14 +223,12 @@ public class Pregunta extends Jugador{
 
     //Ultima ronda
     public void quintaRonda (ArrayList<Pregunta> nivel5){
-        Pregunta pregunta = new Pregunta();
-        if(pregunta.getRespuestaJugador() == pregunta.getRespuestaCorrecta()){
-            pregunta.realizarPregunta(nivel5.get(generarNumeroAleatorio()));
-            if (pregunta.getRespuestaJugador() == (pregunta.getRespuestaCorrecta())){
+        realizarPregunta(nivel5.get(generarNumeroAleatorio()));
+        if(getRespuestaJugador() == getRespuestaCorrecta()){
                 System.out.println("Has ganado el juego");
             }
-        }else {
-            if (pregunta.getRespuestaJugador() != pregunta.getRespuestaCorrecta()) {
+        else {
+            if (getRespuestaJugador() != getRespuestaCorrecta()) {
                 setSaldo(0);
                 System.out.println("La partida ha finalizado");
             }
